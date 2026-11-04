@@ -14,8 +14,7 @@ describe('Validación de vulnerabilidad XSS', () => {
     cy.contains('button', 'Crear tarea').click();
 
     // Verificar que la tarea se muestra como texto plano
-    // Error intencional: se busca una tarea que no existe
-    cy.contains('#taskList li', '<h1>TAREA INEXISTENTE</h1>').should('exist');
+    cy.contains('#taskList li', '<h1>TAREA MALICIOSA</h1>').should('exist');
 
     // Verificar que NO se renderizó un elemento H1 dentro de la lista
     cy.get('#taskList h1').should('not.exist');
