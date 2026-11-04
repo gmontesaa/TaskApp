@@ -22,11 +22,6 @@ jobs:
       - name: Instalar binario de Cypress
         run: npx cypress install
 
-      - name: Iniciar aplicación
-        run: |
-          node server.js &
-          sleep 10
-
       - name: Ejecutar Cypress
         run: npx cypress run
 
