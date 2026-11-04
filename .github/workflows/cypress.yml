@@ -22,10 +22,10 @@ jobs:
       - name: Instalar binario de Cypress
         run: npx cypress install
 
-      - name: Iniciar servidor incorrecto (provoca el error)
+      - name: Iniciar aplicación
         run: |
-          python3 -m http.server 3000 &
-          sleep 5
+          node server.js &
+          sleep 10
 
       - name: Ejecutar Cypress
         run: npx cypress run
